@@ -1,0 +1,1 @@
+web: gunicorn emibeauty.wsgi --log-file -
