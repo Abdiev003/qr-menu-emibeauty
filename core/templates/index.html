@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="{% static 'assets/favicon.ico' %}" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Google Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Emi Beauty Club | Xoş gəlmisiniz</title>
+  </head>
+  <body>
+    <div class="header">
+
+    <!-- Header -->
+      <ul class="menu">
+        <li><a href="#services">Xidmətlərimiz</a></li>
+        <li><a href="#contact">Bizimlə Əlaqə</a></li>
+      </ul>
+    <!-- End Header -->
+
+
+    <!-- Content -->
+      <h1>Emi Beauty Club</h1>
+      <div class="container">
+        <h2 id="services">Xidmətlərimiz</h2>
+
+        {% for service in services %}
+          <div class="services" >
+            <h3>{{service.name}}</h3>
+            {% for service_item in service_items %}
+              {% if service_item.service == service %}
+                <h5>{{service_item.name}}</h5>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+
+        <h2 id="contact">Bizimlə Əlaqə</h2>
+        <div class="contact">
+            <a href="tel:+994124364440">
+                <h5 style="text-align: center;">Telefon<h6>+994 12 436-44-40</h6> </h5>
+            </a>
+          <a href="https://wa.me/+994558613307" target="_blank">
+            <h5 style="text-align: center;">Whatsapp: <h6>+994 55 861-33-07</h6></h5>
+          </a>
+
+          <a href="email:supergruppa2013@gmail.com">
+            <h5 style="text-align: center;">Email: <h6>supergruppa2013@gmail.com</h6>
+            </a>
+
+            <h5>Ünvan</h5>
+          <a href="https://goo.gl/maps/rAqdjQfxmRBVpktHA" style="text-align: center;" target="_blank">
+            <h6>7-ci Mikrorayon, Süleyman Sani Axundov 3C</h6>
+          </a>
+        </div>
+      </div>
+    <!-- End Content -->
+    </div>
+  </body>
+</html>
