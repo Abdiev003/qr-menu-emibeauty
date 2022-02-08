@@ -1,0 +1,6 @@
+location /static/ {
+    alias /emibeauty/static/;
+}
+location /media/ {
+    alias /emibeauty/media/;
+}
